@@ -16,7 +16,79 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+        
+        private void eqcl()
+        {
+            string equals = "=";
+            string comma = ",", alpADD = "ADD", alpadd = "add", alpMOV = "MOV", alpmov = "mov" ;
 
+            int index0 = richTextBox2.Text.IndexOf(equals);
+            int length0 = equals.Length;
+
+            int indexcomma = richTextBox2.Text.IndexOf(comma);
+            int lengthcomma = 1;
+
+            int indexadd = richTextBox2.Text.IndexOf(alpadd);
+            int indexADD = richTextBox2.Text.IndexOf(alpADD);
+            int indexmov = richTextBox2.Text.IndexOf(alpmov);
+            int indexMOV = richTextBox2.Text.IndexOf(alpMOV);
+
+            //int lengthadd = 3, lengthADD = 3, lengthmov = 3, lengthMOV = 3;
+
+            if (index0 >= 0)
+            {
+                richTextBox2.Select(index0, length0);
+                richTextBox2.SelectionColor = Color.Red;
+            }
+            if (indexcomma >= 0)
+            {
+                richTextBox2.Select(indexcomma, lengthcomma);
+                richTextBox2.SelectionColor = Color.Red;
+            }
+            if (indexadd >= 0)
+            {
+                richTextBox2.Select(indexadd, alpadd.Length);
+                richTextBox2.SelectionColor = Color.GreenYellow;
+            }
+            if (indexADD >= 0)
+            {
+                richTextBox2.Select(indexADD, alpADD.Length);
+                richTextBox2.SelectionColor = Color.GreenYellow;
+
+
+            }
+            if (indexmov >= 0)
+            {
+                richTextBox2.Select(indexmov, alpmov.Length);
+                richTextBox2.SelectionColor = Color.GreenYellow;
+                    
+            }
+            if (indexMOV >= 0)
+            {
+                richTextBox2.Select(indexMOV, alpMOV.Length);
+                richTextBox2.SelectionColor = Color.GreenYellow;
+            }
+
+            //reset color
+            
+
+
+        }
+                    /*
+        private void search()
+        {
+            int start = 0, end = richTextBox2.Text.LastIndexOf(richTextBox2.Text);
+            while(start<end)
+            {
+                searchColorChange();
+            }
+        }
+        private void searchColorChange()
+        {
+
+        }
+        
+        */
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox2.Clear();
@@ -81,6 +153,11 @@ namespace WindowsFormsApplication1
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox2.SelectAll();
+        }
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            for(int i=0;i<6 ;i ++) eqcl();
         }
     }
 }
