@@ -17,6 +17,14 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
+        private void eqcl()
+        {
+            string equals = "=";
+            int index = richTextBox2.Text.IndexOf(equals);
+            richTextBox2.Select(index, 1);
+            richTextBox2.SelectionColor = Color.Red;
+        }
+
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox2.Clear();
@@ -81,6 +89,16 @@ namespace WindowsFormsApplication1
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             richTextBox2.SelectAll();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            eqcl();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            eqcl();
         }
     }
 }
