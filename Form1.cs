@@ -20,9 +20,55 @@ namespace WindowsFormsApplication1
         private void eqcl()
         {
             string equals = "=";
-            int index = richTextBox2.Text.IndexOf(equals);
-            richTextBox2.Select(index, 1);
-            richTextBox2.SelectionColor = Color.Red;
+            string comma = ",", alpADD = "ADD", alpadd = "add", alpMOV = "MOV", alpmov = "mov" ;
+
+            int index0 = richTextBox2.Text.IndexOf(equals);
+            int length0 = equals.Length;
+
+            int indexcomma = richTextBox2.Text.IndexOf(comma);
+            int lengthcomma = 1;
+
+            int indexadd = richTextBox2.Text.IndexOf(alpadd);
+            int indexADD = richTextBox2.Text.IndexOf(alpADD);
+            int indexmov = richTextBox2.Text.IndexOf(alpmov);
+            int indexMOV = richTextBox2.Text.IndexOf(alpMOV);
+
+            //int lengthadd = 3, lengthADD = 3, lengthmov = 3, lengthMOV = 3;
+
+            if (index0 >= 0)
+            {
+                richTextBox2.Select(index0, length0);
+                richTextBox2.SelectionColor = Color.Red;
+            }
+            if (indexcomma >= 0)
+            {
+                richTextBox2.Select(indexcomma, lengthcomma);
+                richTextBox2.SelectionColor = Color.Red;
+            }
+            if (indexadd >= 0)
+            {
+                richTextBox2.Select(indexadd, alpadd.Length);
+                richTextBox2.SelectionColor = Color.GreenYellow;
+            }
+            if (indexADD >= 0)
+            {
+                richTextBox2.Select(indexADD, alpADD.Length);
+                richTextBox2.SelectionColor = Color.GreenYellow;
+
+
+            }
+            if (indexmov >= 0)
+            {
+                richTextBox2.Select(indexmov, alpmov.Length);
+                richTextBox2.SelectionColor = Color.GreenYellow;
+                    
+            }
+            if (indexMOV >= 0)
+            {
+                richTextBox2.Select(indexMOV, alpMOV.Length);
+                richTextBox2.SelectionColor = Color.GreenYellow;
+            }
+
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,10 +139,12 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            eqcl();
+            for(int i = 0;i<5;i++)eqcl();
         }
         
         /*
+        //Parallel threading to make concurrent changes to the color of the keywords
+        //incompelete bgCode
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             eqcl();
