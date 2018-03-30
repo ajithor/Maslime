@@ -6,6 +6,6 @@ Possesses the functions like (cut, copy, paste, save, exit, open*, handling the 
 
  -*- not tested
 
-
+Check the barnch - button_color_change for newer commits.
 Developed by using C#
 --by ajHash
