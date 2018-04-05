@@ -6,6 +6,9 @@ Possesses the functions like (cut, copy, paste, save, exit, open*, handling the 
 
  -*- not tested
 
+---
+Check out the Wiki for details of how to run it in a VS Express or Visual Studio.
+---
 Check the barnch - button_color_change for newer commits.
 Developed by using C#
 --by ajHash
